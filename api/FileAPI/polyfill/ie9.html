@@ -7,12 +7,13 @@
 <!-- </form> -->
 
 <!-- https://github.com/moxiecode/moxie -->
-<script src="js/moxie.min.js"></script>
+<script src="js/moxie.js"></script>
 
 <script>
-mOxie.Env.swf_url = '/flash/Moxie.min.swf';
+mOxie.Env.swf_url = './flash/Moxie.min.swf';
 
 var photo;
+
 var fileInput = new mOxie.FileInput({
   browse_button: 'photo', // or document.getElementById('photo')
   accept: [
@@ -23,6 +24,7 @@ var fileInput = new mOxie.FileInput({
 fileInput.onchange = function(e) {
   // do something to files array
   photo = e.target.files[0]; // or this.files or fileInput.files
+  console.info(photo);
 };
 
 fileInput.init(); // initialize
